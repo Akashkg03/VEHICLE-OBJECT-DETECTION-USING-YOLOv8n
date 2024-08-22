@@ -1,0 +1,8 @@
+
+    train: /content/drive/MyDrive/vehicle_classification_model/data/train
+    val: /content/drive/MyDrive/vehicle_classification_model/data/valid
+    test: /content/drive/MyDrive/vehicle_classification_model/data/test
+
+    nc: 12
+    names: ['Motorized2wheleer', 'ambasador_taxi', 'autorickshaw', 'bicycle', 'bus', 'car', 'minitruck', 'motarvan', 'rickshaw', 'toto', 'truck', 'van']
+    
