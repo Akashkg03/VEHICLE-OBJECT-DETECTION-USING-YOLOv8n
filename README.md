@@ -55,6 +55,6 @@ Example of YOLOv8n accurately detecting vehicles with high confidence.
 <img src="data/inference_images/inference_results/2.jpg" alt="text0" width="300"/>
 
 ## **🌍 Connect with Me**
-- **[LinkedIn](www.linkedin.com/in/akash-k-g)**
+- **[LinkedIn](https://www.linkedin.com/in/akash-k-g)**
 - **[GitHub](https://github.com/Akashkg03)**
 
