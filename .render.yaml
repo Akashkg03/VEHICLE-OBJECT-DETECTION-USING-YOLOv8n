@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: vehicle_detector        # Replace this with your preferred name for the service
+    env: python
+    region: singapore              # You can choose a different region if needed
+    plan: free                 # Ensure you are on the free plan
+    buildCommand: ""           # No specific build command needed
+    startCommand: gunicorn app:app  # This assumes your Flask app is named `app.py` and the Flask app object is named `app`
+    envVars:
+      - key: FLASK_ENV
+        value: production      # Sets the environment to production
