@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle Detection</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #eaeaea;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #333;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            max-width: 700px;
+            width: 100%;
+        }
+        h1 {
+            color: #007BFF;
+            margin-bottom: 20px;
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+            letter-spacing: 2px;
+        }
+        .upload-form {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+        .upload-btn-wrapper {
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+            flex: 1;
+            margin-right: 10px;
+        }
+        .btn, .submit-btn {
+            border: 2px solid #007BFF;
+            color: #007BFF;
+            background-color: white;
+            padding: 14px 24px;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            box-sizing: border-box;
+            text-align: center;
+        }
+        .upload-btn-wrapper input[type="file"] {
+            font-size: 100px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: 0;
+            cursor: pointer;
+            width: 100%;
+        }
+        .btn:hover, .submit-btn:hover {
+            background-color: #007BFF;
+            color: white;
+        }
+        .submit-btn {
+            margin-left: 10px;
+            flex: 1;
+        }
+        .general-info {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: #555;
+            text-align: left;
+            padding: 15px 20px;
+            background-color: #f1f1f1;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            line-height: 1.6;
+        }
+        .error {
+            color: #ff4d4d;
+            margin-top: 20px;
+            font-size: 1.1rem;
+        }
+        #loading-message {
+            display: none;
+            font-size: 1rem;
+            margin-top: 20px;
+            color: #007BFF;
+        }
+    </style>
+    <script>
+        // Display loading message on form submit
+        function showLoadingMessage() {
+            document.getElementById('loading-message').style.display = 'block';
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Vehicle Detection</h1>
+        <p class="general-info">
+            Upload an image to detect its type. Supported formats include JPG, JPEG, and PNG.
+        </p>
+        <form method="POST" enctype="multipart/form-data" class="upload-form" onsubmit="showLoadingMessage()">
+            <div class="upload-btn-wrapper">
+                <button class="btn">Choose an Image</button>
+                <input type="file" name="file" accept="image/*" required>
+            </div>
+            <input type="submit" value="Upload and Detect" class="submit-btn">
+        </form>
+        <div id="loading-message">
+            <p>Uploading and processing your image, please wait...</p>
+        </div>
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>
